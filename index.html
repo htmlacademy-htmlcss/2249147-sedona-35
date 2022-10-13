@@ -8,10 +8,9 @@
   <body>
    <header class="page-header">
     <nav class="navigation">
-      <!--Что сделать с лого сайта на главной странице? Если это не ссылка, то оставляем просто тег картинки или пустую ссылку? И лого включать в навигацию или просто в хэдере?-->
-      <!--<a class="navigation-logo" href="">-->
-      <img class="page-header-logo" alt="Логотип «sedona»" src="">
-      <!--</a>-->
+      <a class="page-header-logo">                                                   <!--добавить атрибут href=""-->
+        <img src="" alt="Логотип сайта городка «sedona»">                            <!--добавлять ещё раз класс class="page-header-logo" ???-->
+      </a>
       <ul class="navigation-list">
         <li class="navigation-item">
           <a class="navigation-link navigation-link-current" href="index.html">Главная</a>
@@ -23,7 +22,7 @@
           <a class="navigation-link" href="catalog.html">Гостиницы</a>
         </li>
       </ul>
-      <ul class="navigation-list navigation-user"> <!--Зачем оставлять класс "navigation-list"???-->
+      <ul class="navigation-list navigation-user">                                    <!--Зачем оставлять класс "navigation-list"???-->
         <li class="navigation-item">
           <a class="navigation-link" href="#">
             <span class="visually-hidden">Поиск</span>
@@ -49,8 +48,9 @@
      Можем назвать не логотипом, а приветственной табличкой (class="welcome-plate") или вывеской (class="signboard") ???-->
       <img class="logo" src="" alt="Приветственный логотип «Добро пожаловать в Седону»">
       <p class="welcome-description">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
-      <p class="welcome-reasonы">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
+      <p class="welcome-reasons">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
     </section>
+
     <section class="advantages">
       <h2 class="visually-hidden">Преимущества</h2>
       <img class="description-image" src="" alt="Фото домов городка Седона">
@@ -78,6 +78,7 @@
       </ul>
       <img class="description-image" src="" alt="Фото панорамы «Моста дьявола»">
     </section>
+
     <section class="activities">
       <h2 class="visually-hidden">Занятия</h2>
       <ul class="activities-list">
@@ -96,6 +97,22 @@
       </ul>
     </section>
 
+    <section class="appointment">
+      <h2 class="visually-hidden">Записаться</h2>
+      <p class="appointment-description">Заинтересовались?</p>
+      <p class="appointment-reasons">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+      <a class="button" href="#">Поиск гостиницы в Седоне</a>
+    </section>
+
+    <section class="newsletter">
+      <h2 class="newsletter-title">Подпишитесь на рассылку</h2>
+      <p class="newsletter-reasons">Только полезная информация и никакого спама, честное бойскаутское!</p>
+      <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
+        <label for="newsletter-email" class="visually-hidden">Email</label>
+        <input class="field" placeholder="Ваш e-mail" type="email" name="newsletter-email" id="newsletter-email" required>
+        <button class="button newsletter-button" type="submit">Подписаться</button>
+      </form>
+    </section>
    </main>
 
    <footer>
