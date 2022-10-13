@@ -22,7 +22,7 @@
           <a class="navigation-link" href="catalog.html">Гостиницы</a>
         </li>
       </ul>
-      <ul class="navigation-list navigation-user">                                    <!--Зачем оставлять класс "navigation-list"???-->
+      <ul class="navigation-list navigation-user">                                    <!--Зачем оставлять класс "navigation-list" он же отличается от навигейшн-юзер???-->
         <li class="navigation-item">
           <a class="navigation-link" href="#">
             <span class="visually-hidden">Поиск</span>
@@ -115,8 +115,37 @@
     </section>
    </main>
 
-   <footer>
+   <footer class="page-footer">
 
+    <section class="footer-social">
+      <h2 class="visually-hidden">Социальные сети</h2>
+      <ul class="footer-social-list">
+        <li class="footer-social-item">
+          <a class="button footer-social-button" href="#">
+            <span class="visually-hidden">ВКонтакте</span>
+          </a>
+        </li>
+        <li class="footer-social-item">
+          <a class="button footer-social-button" href="#">
+            <span class="visually-hidden">Telegram</span>
+          </a>
+        </li>
+        <li class="footer-social-item">
+          <a class="button footer-social-button" href="#">
+            <span class="visually-hidden">YouTube</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="footer-contacts">
+      <h2 class="visually-hidden">Телефон для связи</h2>
+      <a class="footer-contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+    </section>
+
+    <a class="htmlacademy-link" href="https://htmlacademy.ru/">       <!--Нужен ли тег <p> или другое выделение лого с ссылкой???-->
+      <img src="" alt="Логотип html academy">
+    </a>
    </footer>
   </body>
 </html>
