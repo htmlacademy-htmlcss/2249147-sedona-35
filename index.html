@@ -3,146 +3,148 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
 
   <body>
-    <header>
-      <nav>
+    <header class="page-header">
+      <nav class="navigation">
         <a href="">
           <img src="images/header-logo-sedona.svg" width="140" height="70.05" alt="Логотип сайта городка «sedona»">
         </a>
         <ul>
           <li>
-            <a class="current" href="index.html">Главная</a>
+            <a class="navigation-link current" href="index.html">Главная</a>
           </li>
           <li>
-            <a href="#">О седоне</a>
+            <a class="navigation-link" href="#">О седоне</a>
           </li>
           <li>
-            <a href="catalog.html">Гостиницы</a>
+            <a class="navigation-link" href="catalog.html">Гостиницы</a>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="#">
+            <a class="navigation-link" href="#">
               <img src="#" alt="Поиск">
             </a>
           </li>
           <li>
-            <a href="#">
+            <a class="navigation-link" href="#">
               <img src="#" alt="Отзывы">
               <span>12</span>
             </a>
           </li>
           <li>
-            <a href="#">Хочу сюда!</a>
+            <a class="button button-small button-brown" href="#">Хочу сюда!</a>
           </li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section>
-        <h1 class="visually-hidden">Городок Седона</h1>
-        <!--Заголовок <h1> помещаем внутрь section? или выносим просто в main?-->
-        <img src="images/welcome.svg" width="187.7" height="44.7" alt="welcome">
-        <img src="images/to_the_gorgeous.svg" width="256" height="28.78" alt="to the gorgeus">
-        <img src="images/sedona.svg" width="456.7" height="212.77" alt="sedona">
+      <section class="main-index">
+        <div class="main-index-mask">    <!--Такое расположение для маски оправдано или нужно по-другому накладывать? Или это вообще не про фон сейчас?-->
+          <h1 class="visually-hidden">Городок Седона</h1>
+          <img src="images/welcome.svg" width="187.7" height="44.7" alt="welcome">
+          <img src="images/to_the_gorgeous.svg" width="256" height="28.78" alt="to the gorgeus">
+          <img src="images/sedona.svg" width="456.7" height="212.77" alt="sedona">
+        </div>
       </section>
 
-      <section>
+      <section class="description">
         <h2 class="visually-hidden">Описание</h2>
         <!--Заголовок <h2> здесь нужен или нет? если его не ставить, то в валидаторе https://validator.w3.org/ возникает предупреждение-->
-        <p>Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
-        <p>Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
+        <p class="description-statement">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
+        <p class="description-reasons">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
       </section>
 
-      <section>
+      <section class="adventages">
         <h2 class="visually-hidden">Преимущества</h2>
           <ul>
             <li>
-              <h3>Настоящий городок</h3>
+              <h3 class="advantages-title">Настоящий городок</h3>
               <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
               <img src="images/town.jpg" width="800" height="384" alt="Фото домов городка Седона">
             </li>
             <li>
-              <h3>Небольшая площадь</h3>
+              <h3 class="advantages-title">Небольшая площадь</h3>
               <p>Все достопримечательности находятся очень близко</p>
             </li>
             <li>
-              <h3>Красивая дорога</h3>
+              <h3 class="advantages-title">Красивая дорога</h3>
               <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
             </li>
             <li>
-              <h3>Мало туристов</h3>
+              <h3 class="advantages-title">Мало туристов</h3>
               <p>Большинство едет в Гранд Каньон и толпится там</p>
             </li>
             <li>
-              <h3>Там есть мост дьявола</h3>
+              <h3 class="advantages-title">Там есть мост дьявола</h3>
               <p>Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
               <img src="images/devil_bridge.jpg" width="800" height="384" alt="Фото панорамы «Моста дьявола»">
             </li>
           </ul>
       </section>
 
-      <section>
+      <section class="actions">
         <h2 class="visually-hidden">Занятия</h2>
         <ul>
           <li>
             <img src="#" alt="Символ дома">
-            <h3>Жильё</h3>
+            <h3 class="actions-title">Жильё</h3>
             <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
           </li>
           <li>
             <img src="#" alt="Символ еды">
-            <h3>Еда</h3>
+            <h3 class="actions-title">Еда</h3>
             <p>Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь!</p>
           </li>
           <li>
             <img src="#" alt="Символ сувенира">
-            <h3>Сувениры</h3>
+            <h3 class="actions-title">Сувениры</h3>
             <p>Не только китайского, но и настоящего местного производства!</p>
           </li>
         </ul>
       </section>
 
-      <section>
+      <section class="description">
         <h2 class="visually-hidden">Предложения гостиниц</h2>
-        <p>Заинтересовались?</p>
-        <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-        <a class="button" href="#">Поиск гостиницы в Седоне</a>
+        <p class="description-statement">Заинтересовались?</p>
+        <p class="description-reasons">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <a  class="button button-big button-brown" href="#">Поиск гостиницы в Седоне</a>
       </section>
 
-      <section>
-        <h2>Подпишитесь на рассылку</h2>
-        <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
+      <section class="main-subscribe">
+        <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
+        <p class="description-reasons">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form action="https://echo.htmlacademy.ru/" method="post">
-          <input placeholder="Ваш e-mail" type="email" name="email" required>
-          <button type="submit">Подписаться</button>
+          <input class="field" placeholder="Ваш e-mail" type="email" name="email" required>
+          <button class="button button-big button-blue" type="submit">Подписаться</button>
         </form>
       </section>
     </main>
 
-    <footer>
+    <footer class="page-footer">
       <ul>
         <li>
           <a href="https://vk.com/htmlacademy">
-            <img src="#" alt="ВКонтакте">
+            <img src="images/social/VK.svg" alt="ВКонтакте">
           </a>
         </li>
         <li>
           <a href="https://t.me/htmlacademy">
-            <img src="#" alt="Telegram">
+            <img src="images/social/Telegram.svg" alt="Telegram">
           </a>
         </li>
         <li>
           <a href="https://www.youtube.com/user/htmlacademyru">
-            <img src="#" alt="YouTube">
+            <img src="images/social/Youtube.svg" alt="YouTube">
           </a>
         </li>
       </ul>
 
-      <a href="tel:+78128121212">+7 (812) 812-12-12</a>
+      <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
 
       <a href="https://htmlacademy.ru/">
         <img src="images/htmlacademy.svg" width="114.9" height="32.9" alt="Логотип html academy">
