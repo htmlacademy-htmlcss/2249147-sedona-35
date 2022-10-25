@@ -45,8 +45,11 @@
     <main class="main-contaner">
       <div class="page-container">
         <div class="hotels-hero">
-          <h1 class="inner-header-title">Гостиницы Седоны</h1>
-          <ul>
+          <div class="inner-header-title-block">
+            <h1 class="inner-header-title">Гостиницы Седоны</h1>
+          </div>
+
+          <ul class="breadcrumbs-list">
             <li>
               <a class="breadcrumbs-link" href="index.html">
                 <img src="images/icons/breadcrumps_home.svg" alt="Главная">
@@ -60,9 +63,9 @@
           <section>
             <h2 class="visually-hidden" hidden>Фильтр гостиниц</h2>
             <form class="hotel-filter" action="https://echo.htmlacademy.ru/" method="get">
-              <fieldset>
+              <fieldset class="hotels-filter-infrastructure">
                 <legend class="hotels-filter-title">Инфраструктура:</legend>
-                <ul>
+                <ul class="">
                   <li>
                     <label>
                       <input type="checkbox" name="swimming_pool" checked>
@@ -84,7 +87,7 @@
                 </ul>
               </fieldset>
 
-              <fieldset>
+              <fieldset class="hotels-filter-type">
                 <legend class="hotels-filter-title">Тип жилья:</legend>
                 <ul>
                   <li>
@@ -108,7 +111,7 @@
                 </ul>
               </fieldset>
 
-              <fieldset>
+              <fieldset  class="hotels-filter-price">
                 <legend class="hotels-filter-title">Стоимость, <span>₽</span>:</legend>
                   <label class="field">
                     <input class="field field-price" type="text" name="price-from" value="0">
@@ -126,26 +129,28 @@
           </section>
         </div>
 
-        <section class="description">
-          <p class="description-statement">Найдено гостиниц:  <span>38</span></p>
+        <section class="hotels-description">
+          <div class="hotels-card-filter">
+            <p class="description-statement hotels-card-ammount">Найдено гостиниц:  <span>38</span></p>
 
-          <select aria-label="Сортировка">
-            <option value="cheap">Сначала дешёвое</option>
-            <option value="popular">Сначала популярное</option>
-            <option value="expensive">Сначала дорогое</option>
-          </select>
+            <select class="sorted-block" aria-label="Сортировка">
+              <option value="cheap">Сначала дешёвое</option>
+              <option value="popular">Сначала популярное</option>
+              <option value="expensive">Сначала дорогое</option>
+            </select>
 
-          <a class="button-mode button-mode-current" href="#">
-            <img src="images/mode/tile.svg" alt="Показать карточки">
-          </a>
-          <a class="button-mode" href="#">
-            <img src="images/mode/slideshow.svg" alt="Показать поштучно">
-          </a>
-          <a class="button-mode" href="#">
-            <img src="images/mode/list.svg" alt="Показать список">
-          </a>
+            <a class="button-mode button-mode-current" href="#">
+              <img src="images/mode/tile.svg" alt="Показать карточки">
+            </a>
+            <a class="button-mode" href="#">
+              <img src="images/mode/slideshow.svg" alt="Показать поштучно">
+            </a>
+            <a class="button-mode" href="#">
+              <img src="images/mode/list.svg" alt="Показать список">
+            </a>
+          </div>
 
-          <ul>
+          <ul class="hotels-card-list">
             <li class="hotels-card">
               <a class="hotels-card-link" href="#">
                 <img src="images/hotels/hotel-1.jpg" width="300" height="212" alt="Фотография гостиницы Amara Resort & Spa">

@@ -323,6 +323,26 @@ body {
   color: #ffffff;
   background-color: #82B3D3;
   background-size: 100% auto;
+  text-align: left;
+}
+
+.innerheader-title-contaner {
+  display: flex;
+  flex-direction: column;
+  width: 1060px;
+  justify-content: center;
+}
+
+.inner-header-title-block {
+  width: 1060px;
+  margin: 0 70px 0;
+}
+
+.breadcrumbs-list {
+  width: 1060px;
+  margin: 0 70px 0;
+  padding: 0;
+
 }
 
 .breadcrumbs-link {
@@ -337,12 +357,53 @@ body {
 
 .hotel-filter {
   display: flex;
+  margin: 0 70px 0;
 }
 
 .hotels-filter-title {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
+}
+
+.hotels-filter-infrastructure {
+  margin: 0 70px 0 0;
+  padding: 0;
+  width: 150px;
+}
+
+.hotels-filter-type {
+  margin: 0 140px 0 0;
+  padding: 0;
+  width: 150px;
+}
+
+.hotels-filter-price {
+  margin: 0 70px 0 0;
+  padding: 0;
+  width: 288px;
+}
+
+.hotels-description {
+  background-color: #ffffff;
+}
+
+.hotels-card-ammount {
+  display: block;
+  margin-right: auto;
+}
+
+.sorted-block {
+  width: 292;
+  padding: 0;
+  margin: 0 70px 0;
+}
+
+.hotels-card-filter {
+  display: flex;
+  width: 1060px;
+  padding: 0;
+  margin: 0 70px 0;
 }
 
 .inner-subscribe {
@@ -358,9 +419,19 @@ body {
   text-decoration: none;
 }
 
+.hotels-card-list {
+  display:flex;
+  flex-wrap: wrap;
+  width: 1060px;
+  padding: 0;
+  margin: 0 70px 0;
+  justify-content: space-between;
+}
+
 .hotels-card {
   background-color: #ffffff;
   text-align: left;
+  width: 340px;
 }
 
 .hotels-card-link {
