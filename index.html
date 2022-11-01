@@ -45,14 +45,15 @@
 
     <main class="main-contaner">
       <section class="main-index">
-        <!--<div class="main-index-mask"></div>-->
-        <!--Такое расположение для маски оправдано или нужно по-другому накладывать? Или это вообще не про фон сейчас?-->
+
         <h1 class="visually-hidden">Городок Седона</h1>
         <img class="logo logo-welcome" src="images/welcome.svg" width="188" height="45" alt="welcome">
         <img class="logo logo-tothegorgeous" src="images/to_the_gorgeous.svg" width="256" height="29"
           alt="to the gorgeus">
         <img class="logo logo-sedona" src="images/sedona.svg" width="457" height="213" alt="sedona">
-
+        <div class="main-index-mask">
+          <!--Такое расположение для маски оправдано или нужно по-другому накладывать? Или это вообще не про фон сейчас?-->
+        </div>
       </section>
 
       <section class="description">
@@ -127,7 +128,7 @@
       <section class="main-subscribe">
         <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
         <p class="subscribe-reasons">Только полезная информация и никакого спама, честное бойскаутское!</p>
-        <form action="https://echo.htmlacademy.ru/" method="post">
+        <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
           <input class="field" placeholder="Ваш e-mail" type="email" name="email" required>
           <button class="button button-big button-blue" type="submit">Подписаться</button>
         </form>

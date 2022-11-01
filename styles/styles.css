@@ -92,7 +92,7 @@ body {
   text-transform: none;
 }
 
-/* -----END OF HEADER----- */
+/* -----HEADER----- */
 .page-header {
   width: 1200px;
   margin: 0 auto;
@@ -113,7 +113,8 @@ body {
   margin: 0;
   padding: 0;
   margin-right: 30px;
-  margin-bottom: -6px; /* не понимаю как сделать картинку вылезающей из flex, но при этом поверх main'a? */
+  margin-bottom: -6px;
+  z-index: 1; /* не понимаю как сделать картинку вылезающей из flex, но при этом поверх main'a? */
 }
 
 .navigation-list {
@@ -129,6 +130,9 @@ body {
 .navigation-user {
   width: 356px;
   margin-right: 0;
+}
+
+.navigation-list li {
   align-self: center;
 }
 
@@ -161,7 +165,7 @@ body {
   background-color: #F2F2F2;
   background-size: 100%;
   padding-top: 51px;
-  padding-bottom: 82px;
+  padding-bottom: 0;
 }
 
 .logo {
@@ -179,7 +183,7 @@ body {
 }
 
 .logo-sedona {
-  margin-bottom: 0;
+  margin-bottom: 84px;
 }
 /* вопрос про три картинки закончен */
 
@@ -187,8 +191,9 @@ body {
   background-image: url("../images/index-mask.svg");
   background-repeat: no-repeat;
   background-position: center bottom;
-  /*Здесь же не нужно задавать цвет текста и цвет заднего фона по умолчанию???*/
+  /*Здесь же НЕ нужно задавать цвет текста и цвет заднего фона по умолчанию???*/
   background-size: 100%;
+  /* и как вообще вперёд поставить эту маску? Если я её размещаю дивом, то margin этого дива не входит в основной section class="main-index"*/
 }
 
 .description {
@@ -385,6 +390,7 @@ body {
   padding: 96px 258px 104px;
 }
 
+
 .inner-subscribe {
   background-color: #ffffff;
   padding: 96px 258px 104px;
@@ -409,7 +415,18 @@ body {
   margin-bottom: 54px;
 }
 
+.subscribe-form {
+  display: flex;
+  width: 684px;
+  padding: 0;
+  margin: 0 auto;
+}
 
+.subscribe-form .field {
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+}
 
 
 
@@ -560,11 +577,9 @@ body {
   text-decoration: none;
 }
 
-
-
-
 .hotels-description {
   background-color: #ffffff;
+  padding-bottom: 60px;
 }
 
 .hotels-card-filter {
@@ -587,7 +602,7 @@ body {
 }
 
 .sorted-block {
-  width: 292;
+  width: 292px;
   padding: 0;
   margin: 0;
   margin-right: 70px;
@@ -600,30 +615,41 @@ body {
   background-color: rgba(0, 0, 0, 0);
   width: 48px;
   height: 48px;
+  margin-right: 8px;
 }
 
-
-
-
-
+.hotels-card-filter a:last-child {
+  margin-right: 0;
+}
+/* не понимаю почему не срабатывает фильтр по последнему элементу*/
 
 .hotels-card-list {
-  display:flex;
-  flex-wrap: wrap;
+  display:grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 20px;
   width: 1060px;
   padding: 0;
-  margin: 0 70px 0;
+  margin: 0 70px 60px;
   list-style-type: none;
-  justify-content: space-between;
 }
 
 .hotels-card {
+  display:grid;
+  /* рамка для ячейки*/
+  border-left: 1px solid #E6E6E6;
+
+  grid-template-columns: repeat(2, 140px);
+  column-gap: 20px;
+  row-gap: 16px;
+  padding: 20px;
   background-color: #ffffff;
   text-align: left;
   width: 340px;
 }
 
 .hotels-card-link {
+  grid-column: 1 / -1;
+  display: block;
   color: #000000;
   text-decoration: none;
 }
@@ -657,7 +683,7 @@ body {
 .pagination {
   background-color: #ffffff;
   display: flex;
-  margin: 0;
+  margin: 0 70px;
   padding: 0;
   list-style-type: none;
 }
