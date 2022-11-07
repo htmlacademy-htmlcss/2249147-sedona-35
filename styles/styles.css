@@ -42,40 +42,121 @@ body {
   overflow: hidden;
 }
 
-.button{
+.button {
+  outline: none;
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
-}
-.button-small{
-  font-size: 16px;
-  line-height: 20px;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.button-big{
+.button-small {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 8px 0;
+  align-items: stretch;
+}
+
+.navigation-user .button-small {
+  padding: 8px 0;
+  width: 160px;
+}
+
+.hotels-filter-accept .button-small {
+  padding: 8px 0;
+  width: 191px;
+}
+
+.button-big {
   font-size: 20px;
   line-height: 36px;
+  padding: 8px 50px;
 }
+
 
 .button-brown {
   background-color: #756157;
 }
 
+.button-brown:hover {
+  background-color: #615048;
+}
+
+.button-brown:focus {
+  background-color: #615048;
+}
+
+.button-brown:active {
+  background-color: #756157;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
 .button-blue {
   background-color: #82B3D3;
 }
+
+.button-blue:hover {
+  background-color: #68A2CA;
+}
+
+.button-blue:focus {
+  background-color: #68A2CA;
+}
+
+.button-blue:active {
+  background-color: #82B3D3;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 
 .button-selected {
   background-color: #7DB54F;
 }
 
-.button-reset {
-  background-color: rgba(0, 0, 0, 0);
+.button-selected:hover {
+  background-color: #6C9E42;
 }
+
+.button-selected:focus {
+  background-color: #6C9E42;
+}
+
+.button-selected:active {
+  background-color: #7DB54F;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+.button-reset {
+  background-color: transparent;
+}
+
+.button-reset:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button-reset:focus {
+  outline: 3px solid #83B3D3;
+}
+
+.button-reset:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
 
 .button-rating {
   font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
   color: #333333;
   background-color: #F2F2F2;
 }
@@ -90,6 +171,7 @@ body {
   background-color: #F2F2F2;
   text-decoration: none;
   text-transform: none;
+  border: none;
 }
 
 /* -----HEADER----- */
@@ -109,12 +191,14 @@ body {
 .navigation-logo {
   display: block;
   width: 140px;
-  height: 70px; /*- не понимаю почему нужно задавать высоту блока картинки. 1. Она и так задана в разметке. 2. Размер картинки тоже задан в пикселях же...*/
+  height: 70px;
+  /*- не понимаю почему нужно задавать высоту блока картинки. 1. Она и так задана в разметке. 2. Размер картинки тоже задан в пикселях же...*/
   margin: 0;
   padding: 0;
   margin-right: 30px;
   margin-bottom: -6px;
-  z-index: 1; /* не понимаю как сделать картинку вылезающей из flex, но при этом поверх main'a? */
+  z-index: 1;
+  /* не понимаю как сделать картинку вылезающей из flex, но при этом поверх main'a? */
 }
 
 .navigation-list {
@@ -130,10 +214,15 @@ body {
 .navigation-user {
   width: 356px;
   margin-right: 0;
+  justify-content: flex-end;
 }
 
 .navigation-list li {
   align-self: center;
+}
+
+.navigation-user li:last-child {
+  padding-left: 20px;
 }
 
 .navigation-link {
@@ -147,25 +236,66 @@ body {
   text-transform: capitalize;
   margin: 0;
   padding: 20px 16px;
+  position: relative;
 }
+
+.navigation-link-current::before {
+  position: absolute;
+  right: 16px;
+  bottom: -1px;
+  left: 16px;
+  height: 2px;
+  background-color: #756257;
+  content: "";
+}
+
+.navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+
+/* .navigation-icon-favorites {
+  position: relative;
+}
+
+.navigation-icon-favorites::after {
+  position: absolute;
+  top: -11px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background-color: #7DB54F;
+  content: "";
+  border-radius: 10px;
+} */
+
+
+
 /* -----END OF HEADER----- */
 
 
 .main-contaner {
   width: 1200px;
   margin: 0 auto;
-  flex-grow: 1;  /* Не понимаю, зачем здесь "липкий" footer? Он же должен быть сразу после нижнего секшена... Зачем прилеплять к низу именно страницы? */
+  background-color: #ffffff;
+  flex-grow: 1;
+  /* Не понимаю, зачем здесь "липкий" footer? Он же должен быть сразу после нижнего секшена... Зачем прилеплять к низу именно страницы? */
 }
 
 .main-index {
-  background-image: url("../images/index-background.jpg");
+  background-image: url("../images/index-mask.svg"), url("../images/index-background.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center bottom, center top;
   color: #000000;
   background-color: #F2F2F2;
   background-size: 100%;
   padding-top: 51px;
-  padding-bottom: 0;
+  padding-bottom: 50px;
 }
 
 .logo {
@@ -173,7 +303,6 @@ body {
   margin: 0 auto;
 }
 
-/* Не понимаю зачем три картинки нажно разными IMG делать? почему при экспорте сразу всё не объединить? */
 .logo-welcome {
   margin-bottom: 11px;
 }
@@ -183,17 +312,7 @@ body {
 }
 
 .logo-sedona {
-  margin-bottom: 84px;
-}
-/* вопрос про три картинки закончен */
-
-.main-index-mask{
-  background-image: url("../images/index-mask.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  /*Здесь же НЕ нужно задавать цвет текста и цвет заднего фона по умолчанию???*/
-  background-size: 100%;
-  /* и как вообще вперёд поставить эту маску? Если я её размещаю дивом, то margin этого дива не входит в основной section class="main-index"*/
+  margin-bottom: 0;
 }
 
 .description {
@@ -202,7 +321,7 @@ body {
   padding-bottom: 90px;
 }
 
-.description-statement{
+.description-statement {
   width: 620px;
   margin: 0 auto;
   font-size: 30px;
@@ -212,7 +331,7 @@ body {
   margin-bottom: 25px;
 }
 
-.description-reasons{
+.description-reasons {
   width: 651px;
   margin: 0 auto;
   font-size: 22px;
@@ -223,7 +342,7 @@ body {
 
 
 /* таблицу проще на гридах же сделать? Там будут фиксированы размеры ячеек? */
-.advantages{
+.advantages {
   background-color: #ffffff;
 }
 
@@ -250,6 +369,19 @@ body {
   padding: 0;
   width: 175px;
   padding-bottom: 62px;
+  position: relative;
+}
+
+.advantages-title::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -30px;
+  width: 60px;
+  height: 2px;
+  background-color: currentColor;
+  opacity: 0.3;
 }
 
 .advantages-description {
@@ -298,10 +430,6 @@ body {
   padding-top: 92px;
 }
 
-
-
-
-
 .actions {
   background-color: #ffffff;
 }
@@ -347,7 +475,7 @@ body {
   margin-bottom: 81px;
 }
 
-.actions li:nth-child(2n+1){
+.actions li:nth-child(2n+1) {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
@@ -360,7 +488,7 @@ body {
   padding: 96px 304px;
 }
 
-.interest-statement{
+.interest-statement {
   margin: 0 auto;
   font-size: 30px;
   line-height: 36px;
@@ -369,7 +497,7 @@ body {
   margin-bottom: 20px;
 }
 
-.interest-reasons{
+.interest-reasons {
   margin: 0 auto;
   font-size: 22px;
   line-height: 26px;
@@ -416,10 +544,8 @@ body {
 }
 
 .subscribe-form {
-  display: flex;
-  width: 684px;
-  padding: 0;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 .subscribe-form .field {
@@ -450,30 +576,92 @@ body {
   padding: 0;
   list-style-type: none;
   align-items: center;
+
 }
 
-.page-footer-social-icons {
+.page-footer-social-icon {
+  outline: none;
   display: block;
   width: 47px;
   height: 40px;
+  margin: auto;
+  position: relative;
+  fill: #83B3D3;
 }
 
-.contacts-phone-container {
-  width: 720px;
+.social-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #83B3D3;
 }
 
-.footer-htmlacademy-container {
-  width: 115px;
+.page-footer-social-icon:hover .social-icon {
+  fill: #68A2CA;
 }
+
+.page-footer-social-icon:focus .social-icon {
+  fill: #68A2CA;
+}
+
+.page-footer-social-icon:active .social-icon {
+  fill: rgba(104, 162, 202, 0.3);
+}
+
 
 .contacts-phone {
+  width: 720px;
+  outline: none;
   font-size: 40px;
   line-height: 40px;
   text-decoration-line: none;
   text-transform: uppercase;
-  color: #242424;
+  color: #000000;
 }
 
+.contacts-phone:hover {
+  color: #756157;
+}
+
+.contacts-phone:focus {
+  color: #756157;
+}
+
+.contacts-phone:active {
+  color: rgba(117, 97, 87, 0.3);
+}
+
+
+.footer-htmlacademy {
+  width: 115px;
+  position: relative;
+  outline: none;
+}
+
+.footer-htmlacademy-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000000;
+}
+
+.footer-htmlacademy:hover .footer-htmlacademy-icon {
+  fill: #756157;
+}
+
+.footer-htmlacademy:focus .footer-htmlacademy-icon {
+  fill: #756157;
+}
+
+.footer-htmlacademy:active .footer-htmlacademy-icon {
+  fill: rgba(117, 97, 87, 0.3);
+}
 
 
 
@@ -513,18 +701,53 @@ body {
   margin-bottom: 40px;
 }
 
+.breadcrumbs-list li {
+  position: relative;
+}
+
+.breadcrumbs-list li::after {
+  position: absolute;
+  top: 7px;
+  right: 11px;
+  width: 7px;
+  height: 11px;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  background-image: url("../images/icons/breadcrumps_arrow.svg");
+  content: "";
+}
+
+.breadcrumbs-list li:last-child::after {
+  content: none;
+}
+
 .breadcrumbs-link {
+  outline: none;
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
-  color: inherit;
+  color: #ffffff;
   background-color: inherit;
   text-decoration: none;
   text-transform: capitalize;
   margin-right: 28px;
 }
 
+.breadcrumbs-link-home {
+  fill: #ffffff;
+}
 
+.breadcrumbs-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link:focus {
+  color: #ffffff;
+}
+
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
 
 
 .hotel-filter {
@@ -577,9 +800,18 @@ body {
   text-decoration: none;
 }
 
+.hotels-filter-accept {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
 .hotels-description {
   background-color: #ffffff;
   padding-bottom: 60px;
+  position: relative;
 }
 
 .hotels-card-filter {
@@ -587,6 +819,7 @@ body {
   width: 1060px;
   margin: 0;
   padding: 50px 70px 40px;
+  position: relative;
 }
 
 .hotels-card-ammount {
@@ -599,6 +832,7 @@ body {
   text-transform: uppercase;
   text-align: start;
   margin-right: auto;
+  align-self: center;
 }
 
 .sorted-block {
@@ -606,37 +840,76 @@ body {
   padding: 0;
   margin: 0;
   margin-right: 70px;
+  border: 2px solid #E5E5E5;
+  border-radius: 4px;
 }
 
 .button-mode {
   color: #000000;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #ffffff;
   width: 48px;
   height: 48px;
   margin-right: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 14px;
+  border: 2px solid #E5E5E5;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  outline: none;
 }
+
+.button-mode-table {
+  background-image: url("../images/mode/table.svg");
+}
+
+.button-mode-slideshow {
+  background-image: url("../images/mode/slideshow.svg");
+}
+
+.button-mode-list {
+  background-image: url("../images/mode/list.svg");
+
+}
+
+.button-mode:hover {
+  border: 2px solid #000000;
+  box-shadow: none;
+}
+
+.button-mode:focus {
+  border: 2px solid #68A2CA;
+  box-shadow: none;
+}
+
+.button-mode:active {
+  border: 2px solid #000000;
+  box-shadow: none;
+}
+
+
 
 .hotels-card-filter a:last-child {
   margin-right: 0;
 }
-/* не понимаю почему не срабатывает фильтр по последнему элементу*/
 
 .hotels-card-list {
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(3, 340px);
   gap: 20px;
   width: 1060px;
   padding: 0;
-  margin: 0 70px 60px;
+  margin: 0 70px 80px;
   list-style-type: none;
 }
 
 .hotels-card {
-  display:grid;
+  display: grid;
   /* рамка для ячейки*/
-  border-left: 1px solid #E6E6E6;
+  box-sizing: border-box;
+  border: 1px solid #E6E6E6;
 
   grid-template-columns: repeat(2, 140px);
   column-gap: 20px;
@@ -645,6 +918,7 @@ body {
   background-color: #ffffff;
   text-align: left;
   width: 340px;
+
 }
 
 .hotels-card-link {
@@ -675,11 +949,35 @@ body {
   text-align: right;
 }
 
+.hotel-card-rating {
+  background-repeat: space no-repeat;
+  background-position: left center;
+  background-image: url("../images/rating-star.svg");
+}
+
+.hotel-card-rating-1 {
+  width: 18px;
+}
+
+.hotel-card-rating-2 {
+  width: 41px;
+}
+
+.hotel-card-rating-3 {
+  width: 65px;
+}
+
+.hotel-card-rating-4 {
+  width: 89px;
+}
+
+.hotel-card-rating-5 {
+  width: 113px;
+}
+
+/* Не понимаю как повторить фон только N раза и ещё и с пробелами в 6px */
 
 
-
-
-/* Link */
 .pagination {
   background-color: #ffffff;
   display: flex;
@@ -688,12 +986,24 @@ body {
   list-style-type: none;
 }
 
+.pagination::before {
+  content: "";
+  position: absolute;
+  left: 70px;
+  right: 70px;
+  bottom: 160px;
+  height: 0;
+  border-top: 1px solid #E6E6E6;
+}
+
 .pagination-item:not(:last-child) {
   margin-right: 8px;
 }
 
 .pagination-link {
+  outline: none;
   display: block;
+  border-radius: 4px;
   box-sizing: border-box;
   width: 60px;
   height: 60px;
@@ -706,12 +1016,24 @@ body {
   padding: 12px 0;
 }
 
+.pagination-link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .pagination-current {
   color: #000000;
   background-color: #F2F2F2;
 }
 
+.pagination-current:active {
+  color: #000000;
+}
+
 .pagination-intermediate {
   color: #000000;
   background-color: rgba(0, 0, 0, 0);
+}
+
+.pagination-intermediate:active {
+  color: #000000;
 }
