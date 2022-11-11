@@ -42,8 +42,9 @@ body {
   overflow: hidden;
 }
 
-.button {
+/* Что означает по стайлгайду Фокус (браузерный) ?????????? То ли это вообще без рамок, то ли оставить браузерные рамки, то ли :focus-visible, но я не понял как работает проверка поддержки этого селектора */
   /* outline: none; */
+.button {
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
@@ -134,6 +135,13 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.button-brown:disabled,
+.button-blue:disabled,
+.button-selected:disabled {
+  background-color: #E5E5E5;
+  color: rgba(255, 255, 255, 1);
+}
+
 
 .button-reset {
   background-color: transparent;
@@ -152,7 +160,10 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-
+.button-reset:disabled {
+color: #FFFFFF;
+opacity: 0.1;
+}
 
 .button-rating {
   font-weight: 400;
@@ -161,6 +172,7 @@ body {
   color: #333333;
   background-color: #F2F2F2;
 }
+
 
 .field {
   font-family: "PT Sans", sans-serif;
@@ -174,6 +186,7 @@ body {
   text-transform: none;
   border: none;
 }
+
 
 /* -----HEADER----- */
 .page-header {
@@ -273,13 +286,13 @@ body {
 
 /* -----END OF HEADER----- */
 
+/* ---------MAIN---------- */
 
 .main-contaner {
   width: 1200px;
   margin: 0 auto;
   background-color: #ffffff;
   flex-grow: 1;
-  /* Не понимаю, зачем здесь "липкий" footer? Он же должен быть сразу после нижнего секшена... Зачем прилеплять к низу именно страницы? */
 }
 
 .main-index {
@@ -333,10 +346,6 @@ body {
   line-height: 26px;
 }
 
-
-
-
-/* таблицу проще на гридах же сделать? Там будут фиксированы размеры ячеек? */
 .advantages {
   background-color: #ffffff;
 }
@@ -474,10 +483,6 @@ body {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
-
-
-
-
 .interest {
   background-color: #ffffff;
   padding: 96px 304px;
@@ -499,10 +504,6 @@ body {
   margin-bottom: 54px;
 }
 
-
-
-
-
 .main-subscribe {
   background-image: url("../images/subscribe-background.jpg");
   background-repeat: no-repeat;
@@ -512,7 +513,6 @@ body {
   background-size: 100% auto;
   padding: 96px 258px 104px;
 }
-
 
 .inner-subscribe {
   background-color: #ffffff;
@@ -550,11 +550,14 @@ body {
   border-radius: 4px 0 0 4px;
 }
 
+/* К вопросу о шрифте в кнопках. Более похожим его делает пробелы между буквами, но это не правильно... */
 .subscribe-form .button {
   border-radius: 0 4px 4px 0;
   letter-spacing: -2px;
 }
 
+
+/* -------FOOTER------- */
 
 .page-footer {
   display: flex;
@@ -579,7 +582,6 @@ body {
 }
 
 .page-footer-social-icon {
-  /* outline: none; */
   display: block;
   width: 48px;
   height: 40px;
@@ -613,7 +615,6 @@ body {
 
 .contacts-phone {
   width: 720px;
-  /* outline: none; */
   font-size: 40px;
   line-height: 40px;
   text-decoration-line: none;
@@ -637,7 +638,6 @@ body {
 .footer-htmlacademy {
   width: 115px;
   position: relative;
-  /* outline: none; */
 }
 
 .footer-htmlacademy-icon {
@@ -660,6 +660,296 @@ body {
 
 .footer-htmlacademy:active .footer-htmlacademy-icon {
   fill: rgba(117, 97, 87, 0.3);
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  z-index: 2;
+}
+
+.modal-container-close {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 70px;
+  background-color: #ffffff;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+}
+
+.modal-search {
+  width: 577px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-button-cross {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000000;
+}
+
+.modal-close-button:hover {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:focus {
+  background-color: #E6E6E6;
+  border: 3px solid #83B3D3;
+  outline: none;
+}
+
+.modal-close-button:active {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:active .close-button-cross {
+  opacity: 0.3;
+}
+
+.modal-title {
+  text-align: start;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 63px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 48px;
+}
+
+.search-form-label {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: start;
+  text-transform: capitalize;
+  padding: 12px 0;
+  width: 137px;
+}
+
+.search-form-label-children {
+  padding-left: 22px;
+}
+
+.search-form-field:placeholder-shown {
+  opacity: 0.6;
+}
+
+.search-form-field {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  padding: 12px 20px;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  border: none;
+  background-image: url(../images/calendar.svg);
+  background-repeat: no-repeat;
+  background-position: center right 22px;
+}
+
+.search-form-field:hover {
+  opacity: 0.6;
+}
+
+.search-form-field:focus {
+  outline: 3px solid #83B3D3;
+  border-radius: 4px;
+}
+
+.search-form-field:active {
+  outline: 2px solid #000000;
+  border-radius: 4px;
+}
+
+
+.field-group-addition {
+  position: absolute;
+  left: 157px;
+  top: 53px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.field-group-addition-date-in {
+  color: #FF5757;
+}
+
+.field-group-tourist {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 48px;
+}
+
+.field-group-tourist-category {
+  display: grid;
+  grid-template-columns: auto 40px 31px 40px;
+  padding: 0;
+  margin: 0;
+}
+
+.field-group-tourist-field {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+  border: none;
+  background-color: #F2F2F2;
+}
+
+.field-group-tourist-field::-webkit-outer-spin-button,
+.field-group-tourist-field::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.count-button {
+  border: none;
+  background-color: #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.count-button-symbol {
+  fill: rgba(117, 97, 87, 0.3);
+}
+
+.count-button:hover .count-button-symbol {
+  fill: #000000;
+}
+
+.count-button:focus .count-button-symbol {
+  fill: #000000;
+  outline: 3px solid #82B3D3;
+  border-radius: 4px;
+}
+
+.count-button:active .count-button-symbol {
+  fill: rgba(117, 97, 87, 0.3);
+  outline: none;
+}
+
+.modal-button {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 18px 77px;
+  border-radius: 10px;
+}
+
+.tooltip {
+  position: absolute;
+  margin-top: 0;
+  margin-left: 10px;
+  width: 26px;
+  height: 26px;
+}
+
+.tooltip-toggle {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.tooltip-icon {
+  width: 100%;
+  height: 100%;
+  color: #242424;
+  display: block;
+}
+
+.tooltip-toggle:hover .tooltip-icon {
+  opacity: 0.3;
+}
+
+.tooltip-text {
+  background-color: #333333;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: none;
+  padding: 20px 18px 23px 22px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 216px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 15px;
+  display: none;
+}
+
+.tooltip-text:after {
+  content: '';
+  background-image: url("../images/tooltip-arrow.svg");
+  width: 19px;
+  height: 9px;
+  position: absolute;
+  top: -9px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+.form-label-icon {
+  position: relative;
+  padding-right: 16px;
 }
 
 
@@ -705,7 +995,6 @@ body {
   width: 7px;
   height: 11px;
   background-repeat: no-repeat;
-  /* background-position: center center; */
   background-image: url("../images/icons/breadcrumps_arrow.svg");
   content: "";
 }
@@ -715,7 +1004,6 @@ body {
 }
 
 .breadcrumbs-link {
-  /* outline: none; */
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
@@ -742,9 +1030,7 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-
-
-
+/*-----------------FILTER------------------*/
 .hotel-filter {
   display: flex;
   margin: 0;
@@ -796,17 +1082,34 @@ body {
   background-color: #ffffff;
 }
 
-.control:hover {
+.control-input:hover ~ .control-mark,
+.control-input:hover ~ .control-label {
   opacity: 0.6;
 }
 
-.control:focus .control-mark {
+.control-input:focus ~ .control-mark {
   outline: 3px solid #83B3D3;
 }
-/* Не понимаю, почему браузерный фокус не работает */
 
-.control-input:disabled + .control {
+.control-input:active ~ .control-mark,
+.control-input:active ~ .control-label {
   opacity: 0.3;
+}
+
+/* Не понимаю, почему браузерный фокус не работает */
+/* .control:focus-visible .control-mar {
+  outline: 3px solid #83B3D3;
+}
+/* Проверяем поддержку :focus-visible, если НЕ поддерживаем, то проваливаемся внутрь директивы и прописываем :focus */
+/*@supports not selector(:focus-visible) {
+    .control:focus .control-mark {
+      outline: 3px solid #83B3D3;
+  }
+} */
+
+.control-input:disabled ~ .control-mark,
+.control-input:disabled ~ .control-label {
+  opacity: 0.1;
 }
 
 .control-input[type="checkbox"]:checked + .control-mark::after {
@@ -836,7 +1139,9 @@ body {
 
 
 
-/* ____________________ */
+
+
+/* ____RANGE_____ */
 .range-wrapper-inputs {
   display: flex;
   justify-content: space-between;
@@ -853,12 +1158,29 @@ body {
   line-height: 24px;
   font-weight: 700;
   color: #000000;
-  background-color: #ffffff;
+  background-color: #F2F2F2;
   text-decoration: none;
   border: none;
   padding: 12px 60px 12px 20px;
   box-sizing: border-box;
 }
+
+.range-input:hover {
+  background-color: #E6E6E6;
+}
+
+.range-input:focus {
+  background-color: #E6E6E6;
+  outline: 3px solid #83B3D3;
+}
+
+/* Не понимаю, как в инпут можно только активное состояние получить? */
+/* Оно всегда с фокусом сопряжено же? */
+.range-input:active {
+  background-color:#F2F2F2;
+  border: 2px solid #000000;
+}
+
 
 .range-input-text {
   position: absolute;
@@ -884,7 +1206,6 @@ body {
   border-radius: 0 4px 4px 0;
 }
 
-/* Range */
 .range-scale {
   position: relative;
   margin-top: 44px;
@@ -915,18 +1236,14 @@ body {
   border: none;
 }
 
-.range-toggle:hover {
-
-}
-
 .range-toggle:focus {
   outline: 3px solid #83B3D3;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .range-toggle:active {
   outline: 2px solid #83B3D3;
-  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
 }
 
 .toggle-min {
@@ -940,16 +1257,12 @@ body {
 }
 
 
-
-
-
 .hotel-filter-accept {
   display: flex;
   width: 191px;
   flex-direction: column;
   justify-content: flex-end;
 }
-
 
 
 .hotels-description {
@@ -981,7 +1294,6 @@ body {
 
 .sorted-block {
   width: 292px;
-  padding: 0;
   margin: 0;
   margin-right: 70px;
   padding: 12px 18px;
@@ -995,11 +1307,10 @@ body {
   background-repeat: no-repeat;
   background-position: right 18px center;
   appearance: none;
-
 }
 
 .sorted-block:hover,
-.sorted-block:focus  {
+.sorted-block:focus {
   border-color: #68A2CA;
 }
 
@@ -1027,7 +1338,7 @@ body {
   border: 2px solid #E5E5E5;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  /* outline: none; */
+  outline: none;
 }
 
 .button-mode-table {
@@ -1058,8 +1369,6 @@ body {
   box-shadow: none;
 }
 
-
-
 .hotels-card-filter a:last-child {
   margin-right: 0;
 }
@@ -1087,7 +1396,6 @@ body {
   background-color: #ffffff;
   text-align: left;
   width: 340px;
-
 }
 
 .hotels-card-link {
@@ -1124,6 +1432,7 @@ body {
   text-align: right;
 }
 
+/* ----------------------------------------------------------------- */
 .hotel-card-rating {
   background-repeat: space no-repeat;
   background-position: left center;
@@ -1176,7 +1485,6 @@ body {
 }
 
 .pagination-link {
-  /* outline: none; */
   display: block;
   border-radius: 4px;
   box-sizing: border-box;
