@@ -60,9 +60,6 @@ img {
   overflow: hidden;
 }
 
-/* Что означает по стайлгайду Фокус (браузерный) ?????????? То ли это вообще без рамок, то ли оставить браузерные рамки, то ли :focus-visible, но я не понял как работает проверка поддержки этого селектора */
-/* outline: none; */
-/* И на сколько нормальны артефакты в стандартных рамках фокуса, например в избранном со спаном 12 */
 .button {
   font-family: "PT Sans", sans-serif;
   font-style: normal;
@@ -816,7 +813,6 @@ img {
 .search-form-field:invalid,
 .search-form-field.error {
   color: #ff5757;
-  /* Не понимаю что нужно добавить в сообщение об ошибке */
 }
 
 .field-group-addition {
@@ -1112,17 +1108,6 @@ img {
   opacity: 0.3;
 }
 
-/* Не понимаю, почему браузерный фокус не работает и как вообще он должен работать? */
-/* .control:focus-visible .control-mark {
-  outline: 3px solid #83B3D3;
-}
-/* Проверяем поддержку :focus-visible, если НЕ поддерживаем, то проваливаемся внутрь директивы и прописываем :focus */
-/*@supports not selector(:focus-visible) {
-    .control:focus .control-mark {
-      outline: 3px solid #83B3D3;
-  }
-} */
-
 .control-input:disabled ~ .control-mark,
 .control-input:disabled ~ .control-label {
   opacity: 0.1;
@@ -1181,7 +1166,7 @@ img {
   background-color: #e6e6e6;
 }
 
-.range-input:focus {
+.range-input:focus-visible {
   background-color: #e6e6e6;
   outline: 3px solid #83b3d3;
 }
@@ -1191,7 +1176,6 @@ img {
   background-color: #f2f2f2;
   outline: 2px solid #000000;
 }
-
 
 .range-input-text {
   position: absolute;
@@ -1236,7 +1220,6 @@ img {
   background-color: #ffffff;
   opacity: 0.3;
 }
-
 
 .range-toggle {
   position: absolute;
@@ -1451,7 +1434,6 @@ img {
   text-align: right;
 }
 
-/* ----------------------------------------------------------------- */
 .hotel-card-rating {
   background-repeat: space no-repeat;
   background-position: left center;
@@ -1477,7 +1459,6 @@ img {
 .hotel-card-rating-5 {
   width: 113px;
 }
-/* Не понимаю как повторить фон только N раза и ещё и с пробелами в 6px */
 
 .pagination {
   background-color: #ffffff;
