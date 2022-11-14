@@ -867,6 +867,7 @@ img {
   align-items: center;
   justify-content: center;
   outline: none;
+  cursor: pointer;
 }
 
 .count-button-symbol {
@@ -1006,7 +1007,7 @@ img {
   width: 7px;
   height: 11px;
   background-repeat: no-repeat;
-  background-image: url("../images/breadcrumps_arrow.svg");
+  background-image: url("../images/breadcrumps-arrow.svg");
   content: "";
 }
 
@@ -1338,7 +1339,6 @@ img {
   background-position: center;
   background-size: 16px 14px;
   border: 2px solid #e5e5e5;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   outline: none;
 }
@@ -1357,17 +1357,14 @@ img {
 
 .button-mode:hover {
   border: 2px solid #000000;
-  box-shadow: none;
 }
 
 .button-mode:focus {
   border: 2px solid #68a2ca;
-  box-shadow: none;
 }
 
 .button-mode:active {
   border: 2px solid #000000;
-  box-shadow: none;
 }
 
 .hotels-card-filter a:last-child {
@@ -1501,24 +1498,29 @@ img {
   padding: 12px 0;
 }
 
+.pagination-link:hover {
+  background-color: #68A2CA;
+  outline: 1px solid #82B3D3;
+}
+
 .pagination-link:active {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.pagination-current {
-  color: #000000;
-  background-color: #f2f2f2;
-}
-
+.pagination-current,
+.pagination-current:hover,
+.pagination-current:focus,
 .pagination-current:active {
   color: #000000;
+  background-color: #f2f2f2;
+  outline: none;
 }
 
-.pagination-intermediate {
+.pagination-intermediate,
+.pagination-intermediate:hover,
+.pagination-intermediate:focus,
+.pagination-intermediate:active  {
   color: #000000;
   background-color: rgba(0, 0, 0, 0);
-}
-
-.pagination-intermediate:active {
-  color: #000000;
+  outline: none;
 }
