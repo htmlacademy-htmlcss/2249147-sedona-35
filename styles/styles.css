@@ -494,15 +494,15 @@ img {
 }
 
 .actions-item-housing {
-  background-image: url("/images/variant-housing.svg");
+  background-image: url("../images/variant-housing.svg");
 }
 
 .actions-item-eating {
-  background-image: url("/images/variant-eating.svg");
+  background-image: url("../images/variant-eating.svg");
 }
 
 .actions-item-souvenir {
-  background-image: url("/images/variant-souvenir.svg");
+  background-image: url("../images/variant-souvenir.svg");
 }
 
 .actions-title {
