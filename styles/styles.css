@@ -216,7 +216,6 @@ img {
   outline: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-
 /* -----HEADER----- */
 .page-header {
   width: 1200px;
@@ -506,17 +505,6 @@ img {
   background-image: url("/images/variant-souvenir.svg");
 }
 
-
-
-
-/* .actions-item-image {
-  margin: 0 auto;
-  padding: 0;
-  width: 75px;
-  height: 72px;
-  margin-bottom: 27px;
-} */
-
 .actions-title {
   font-family: "PT Sans", sans-serif;
   font-size: 24px;
@@ -664,7 +652,6 @@ img {
 .page-footer-social-icon:active .social-icon {
   fill: rgba(104, 162, 202, 0.3);
 }
-
 
 .contacts-phone {
   width: 720px;
@@ -821,6 +808,13 @@ img {
   overflow: hidden;
 }
 
+.form-label-icon {
+  max-width: 95px;
+  overflow: visible;
+  position: relative;
+  padding-right: 16px;
+}
+
 .search-form-contaner {
   display: flex;
   flex-direction: column;
@@ -916,6 +910,8 @@ img {
   text-align: center;
   border: none;
   background-color: #f2f2f2;
+  appearance: textfield;
+  height: 48px;
 }
 
 .field-group-tourist-field:focus {
@@ -926,8 +922,7 @@ img {
 
 .field-group-tourist-field::-webkit-outer-spin-button,
 .field-group-tourist-field::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   margin: 0;
 }
 
@@ -939,6 +934,7 @@ img {
   justify-content: center;
   outline: none;
   cursor: pointer;
+  height: 50px;
 }
 
 .field-group-tourist-category:hover > .count-button,
@@ -1039,11 +1035,6 @@ img {
 .tooltip-toggle:hover + .tooltip-text,
 .tooltip-toggle:focus + .tooltip-text {
   display: block;
-}
-
-.form-label-icon {
-  position: relative;
-  padding-right: 16px;
 }
 
 /* -------------CATALOG----------------*/
@@ -1276,16 +1267,9 @@ img {
 /*--- Убирает стрелочки для Chrome--- */
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   margin: 0;
 }
-
-/*--- Убирает стрелочки для FireFox--- Правильно ли????????????????????????????? -------- */
-input[type='number'] {
-appearance: textfield;
-}
-/* Сделать класс */
 
 .range-input-min {
   border-radius: 4px 0 0 4px;
@@ -1397,8 +1381,7 @@ appearance: textfield;
   background-image: url("../images/sorted-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .sorted-block:hover,
